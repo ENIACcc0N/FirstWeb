@@ -20,13 +20,22 @@ a {
     text-decoration: none;
     color: white;
 }
-/* Content */
+
+.book-appoinment {
+    background-color: var(--acent-color);
+    padding: 0.5rem 2rem;
+    border-radius: 0.5rem;
+    font-size: 24px;
+}  
+
+/* Conteniner */
 .container{
     height: 100vh;
     display: flex;
     flex-direction: column;
     min-width: var(--min-width);
     background-image: url('assets/img/background_01.jpg');
+    transition: background-image 0.7s ease-in-out;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -34,14 +43,16 @@ a {
 }
 
 .header, .content, .footer {
+    max-width: var(--max-width);
     width: 100%;
     margin: 0 auto;
     padding: 1rem;
 
+
 }
 
+/* Header */
 .header {
-    max-width: var(--max-width);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -78,8 +89,90 @@ a {
     margin-right: 0;
 }
 
-.book-appoinment {
-    background-color: var(--acent-color);
-    padding: 0.5rem 2rem;
-    border-radius: 0.5rem;
+
+/* .content */
+
+.content {
+    position: relative;
+    padding: 2rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
 }
+
+.slidebutton {
+    top: 40%;
+    position: absolute;
+    transform: translateY(-50%);
+    font-size: 3rem;
+    cursor: pointer;
+}
+
+.prevSlide {
+    left: -2rem;
+}
+
+.nextSlide {
+    right: 2rem;
+}
+
+.content__claim {
+    font-size: 64px;
+    color: var(--acent-color);
+    margin: 0;
+}
+
+.content__subclaim {
+    font-size: 36px;
+    margin: 0.5rem 0 2rem;
+
+}
+
+/* Footer */
+
+.footer-wrapper {
+    background-color: black;
+}
+
+.footer {
+    max-width: var(--max-width);
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer__widget {
+    font-size: 24px;
+}
+
+.footer__widget__title {
+    color: var(--acent-color);
+    margin: 0 0 1rem 0;
+}
+
+.footer__widget__text {
+    margin: 0;
+}
+
+/* Responsive staff  */
+
+@media screen and (max-width: 1280px){
+    .header, .footer{
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .content {
+        align-items: center;
+    }
+
+    .footer__widget {
+        margin-bottom: 1rem;
+    }
+
+    .menu {
+        margin-top: 2rem;
+    }
+}
+
